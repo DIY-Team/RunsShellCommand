@@ -56,3 +56,11 @@ func demo2() {
 }
 
 ```
+
+## Installation
+
+
+### Using SwiftPM
+In `Package.swift` file, define under dependencies:
+`.package(url: "https://github.com/DIY-Team/RunsShellCommand", from: 0.0.1)`
+dependency name: `RunsShellCommand`
