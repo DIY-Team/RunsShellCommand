@@ -1,7 +1,7 @@
 # RunsShellCommand
 A library to support defining and running shell commands in swift scripts. Provides a protocol to define the command's composition and a method to execute it.
 
-## Special Mention
+## Special Mention 🙏🏼
 The library uses John Sundell's Shellout repo as depedency for actually running the shell commands.
 More info:
 `https://github.com/JohnSundell/ShellOut.git`
@@ -62,5 +62,7 @@ func demo2() {
 
 ### Using SwiftPM
 In `Package.swift` file, define under dependencies:
-`.package(url: "https://github.com/DIY-Team/RunsShellCommand", from: 0.0.1)`
+
+`.package(url: "https://github.com/DIY-Team/RunsShellCommand", from: "0.0.1")`
+
 dependency name: `RunsShellCommand`
