@@ -63,3 +63,45 @@ public extension AnyShellCommand {
         }
     }
 }
+
+enum GitCommand: AnyShellCommand {
+    case createAndCheckoutNewBranch
+    case deleteBranch
+    
+    var command: String {
+        get { return "git" }
+        set {}
+    }
+    
+    var defaultArguments: [String] {
+        get {
+            switch self {
+            case.createAndCheckoutNewBranch: return ["checkout", "-b"]
+            case .deleteBranch: return ["branch", "-d"]
+            }
+        }
+        set {}
+    }
+}
+
+func demo1() {
+    GitCommand.createAndCheckoutNewBranch.execute(with: ["new-branch-name"])
+    GitCommand.deleteBranch.execute(with: ["some-old-branch"])
+}
+
+struct FileOperationCommand: AnyShellCommand {
+    
+    var command: String
+}
+
+func demo2() {
+    let cDCommand = FileOperationCommand(command: "cd")
+
+    let folderName = "new-folder"
+    FileOperationCommand(command: "mkdir").execute(with: [folderName], onSuccess: { _ in
+        cDCommand.execute(with: [folderName])
+    }, onFailure: { _ in
+        print("Failed to create new folder.")
+    })
+}
+
