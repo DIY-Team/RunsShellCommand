@@ -11,11 +11,12 @@ let package = Package(
             targets: ["RunsShellCommand"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/JohnSundell/ShellOut.git", from: "2.0.0")
+        .package(url: "https://github.com/JohnSundell/ShellOut.git", from: "2.0.0"),
+        .package(url: "https://github.com/JohnSundell/Files.git", from: "4.2.0"),
     ],
     targets: [
         .target(
             name: "RunsShellCommand",
-            dependencies: ["ShellOut"])
+            dependencies: ["ShellOut", "Files"])
     ]
 )
