@@ -18,7 +18,6 @@ enum GitCommand: AnyShellCommand {
     
     var command: String {
         get { return "git" }
-        set {}
     }
     
     var defaultArguments: [String] {
@@ -28,7 +27,6 @@ enum GitCommand: AnyShellCommand {
             case .deleteBranch: return ["branch", "-d"]
             }
         }
-        set {}
     }
 }
 
