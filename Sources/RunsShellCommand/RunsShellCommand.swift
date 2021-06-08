@@ -46,7 +46,7 @@ public extension AnyShellCommand {
 //  Created by Vishal Singh on 10/05/21.
 //
 
-extension Error {
+public extension Error {
     func handle() {
         if let error = self as? FilesError<LocationErrorReason> {
             print(error.localizedDescription)
